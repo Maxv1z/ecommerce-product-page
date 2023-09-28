@@ -1,0 +1,148 @@
+header {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style-type: none;
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .left {
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        gap: 70px;
+
+        .logo {
+        }
+
+        .nav_collection {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+
+            .collection {
+                display: flex;
+                gap: 40px;
+                font-size: var(--font-size);
+                font-weight: 900;
+            }
+        }
+    }
+
+    .cart-and-avatar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+
+        .avatar img {
+            height: 60px;
+            width: auto;
+        }
+
+        .cart img {
+            height: 30px;
+            width: auto;
+        }
+    }
+}
+
+.hamburger,
+.close {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    nav {
+        position: relative;
+        width: 90%;
+
+        .left {
+            gap: 20px;
+        }
+    }
+
+    .hamburger {
+        display: block;
+        text-align: right;
+        cursor: pointer;
+        z-index: 9999;
+        margin: 0;
+    }
+    .close {
+        display: block;
+        text-align: right;
+        margin: 30px;
+    }
+
+    .nav_collection {
+        position: fixed;
+        right: -100px;
+        display: block;
+        background-color: #fff;
+
+        width: 65% !important;
+        height: 100%;
+        transition: 0.5s;
+        top: 0;
+        left: -800px;
+    }
+
+    .collection {
+        display: flex !important;
+        flex-direction: column;
+        gap: 0px !important;
+
+        transition: 0.3s !important;
+        margin: 20px 0 10px 35px;
+
+        margin-top: 90px;
+    }
+
+    .item {
+        font-size: 18px;
+        margin: 20px 0 0 0;
+        font-weight: 900;
+    }
+    .active {
+        left: 0px;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 375px) {
+    nav {
+        .left {
+            gap: 20px;
+        }
+
+        .cart-and-avatar {
+            gap: 10px;
+            .avatar img {
+                height: 25px;
+                width: auto;
+            }
+
+            .cart img {
+                height: 25px;
+                width: auto;
+            }
+        }
+    }
+}
