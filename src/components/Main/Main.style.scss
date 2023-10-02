@@ -1,0 +1,123 @@
+main {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+    margin: 100px 0 0 0;
+
+    z-index: -1;
+
+    .wrapper {
+        margin: 40px 0 0 0;
+    }
+
+    h3 {
+        color: var(--orange);
+        font-size: 1rem;
+    }
+
+    .title {
+        font-size: 3rem;
+        font-weight: 900;
+    }
+
+    .main-text {
+        margin: 30px 0 0 0;
+        width: 450px;
+        font-size: var(--font-size);
+        max-width: 500px;
+        color: gray;
+        font-weight: 500;
+    }
+
+    .prices {
+        margin: 25px 0 0 0;
+
+        .price-and-discount {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            gap: 20px;
+
+            .price {
+                font-size: 1.8rem;
+            }
+
+            .discount {
+                width: 45px;
+                height: 22px;
+                color: var(--orange);
+                background-color: antiquewhite;
+                border-radius: 5px;
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+
+        .previous-price {
+            margin-top: 8px;
+            font-size: 1rem;
+            color: gray;
+            text-decoration: line-through;
+        }
+    }
+
+    .buy-buttons {
+        display: flex;
+        flex-direction: row;
+
+        margin: 30px 0 0 0;
+
+        button {
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        .amount {
+            display: flex;
+
+            button {
+                width: 50px;
+                font-weight: 900;
+                background-color: var(--light-grayish-blue);
+            }
+
+            #decrease {
+                color: var(--orange);
+                font-size: 1.5rem;
+            }
+            #amount-in-cart {
+            }
+            #increase {
+                color: var(--orange);
+                font-size: 1.5rem;
+            }
+        }
+
+        .add-to-cart {
+            button {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                width: 250px;
+                gap: 10px;
+                margin: 0 0 0 10px;
+                background-color: var(--orange);
+                color: white;
+
+                font-weight: 900;
+            }
+
+            img {
+                height: auto;
+                width: 17px;
+            }
+        }
+    }
+}
