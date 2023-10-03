@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import "./ImageGallery.scss";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/scss/image-gallery.scss";
@@ -23,9 +23,6 @@ const images = [
 ];
 
 const Images = () => {
-    const imageGalleryRef = useRef(null);
-    const [fullscreen, setFullscreen] = useState(false);
-
     // const toggleFullScreen = () => {
     //     if (!fullscreen) {
     //         // Enter fullscreen mode
@@ -40,18 +37,35 @@ const Images = () => {
     //         }
     //     }
     // };
+    const imageGalleryRef = useRef(null);
+    const [fullscreen, setFullscreen] = useState(false);
+    const [showNav, setShowNav] = useState(window.innerWidth < 1000);
+
+    useEffect(() => {
+        // Add an event listener for window resize
+        const handleResize = () => {
+            setShowNav(window.innerWidth < 1000);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     return (
         <div className="image-gallery-container">
             <div ref={imageGalleryRef}>
                 <ImageGallery
                     items={images}
-                    infinite={false}
+                    infinite={true}
                     showPlayButton={false}
                     showFullscreenButton={false}
                     lazyLoad={true}
-                    showNav={false}
-                    slideDuration={700}
+                    showNav={showNav}
+                    slideDuration={300}
                 />
             </div>
         </div>

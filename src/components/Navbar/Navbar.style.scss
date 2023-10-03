@@ -1,6 +1,7 @@
 a {
     text-decoration: none;
-    color: inherit;
+    color: gray;
+    font-weight: 500;
 
     &:hover {
         position: relative;
@@ -23,6 +24,7 @@ li {
 }
 
 header {
+    background-color: white;
     z-index: 9999;
     width: 100%;
 
@@ -38,6 +40,10 @@ header {
 
         z-index: 9999;
 
+        @media (max-width: 1000px) {
+            width: 95%;
+        }
+
         .left {
             margin-right: auto;
             display: flex;
@@ -45,6 +51,10 @@ header {
             align-items: center;
 
             gap: 70px;
+
+            @media (max-width: 1000px) {
+                gap: 20px;
+            }
 
             .logo {
             }
@@ -73,11 +83,21 @@ header {
             .avatar img {
                 height: 60px;
                 width: auto;
+
+                @media (max-width: 1000px) {
+                    height: 30px;
+                    width: auto;
+                }
             }
 
             .cart-icon {
                 position: relative;
                 display: inline-block;
+
+                img {
+                    height: 25px;
+                    width: auto;
+                }
 
                 .cart-badge {
                     position: absolute;
@@ -89,6 +109,10 @@ header {
                     padding: 0px 6px;
                     font-size: 12px;
                 }
+            }
+
+            @media (max-width: 1000px) {
+                gap: 25px;
             }
         }
     }
@@ -105,6 +129,18 @@ header {
     padding: 20px;
     display: none;
     z-index: 9999;
+
+    @media (max-width: 1000px) {
+        text-align: center;
+        width: 85vw;
+        height: 200px;
+        top: 25%;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        // transform: translateY(-50%);
+    }
 
     .cart-header {
         width: 100%;
@@ -209,11 +245,13 @@ header {
         z-index: 9999;
         margin: 0;
     }
-    .close {
-        display: block;
-        text-align: right;
-        margin: 30px;
-    }
+    // .close {
+    //     display: block;
+
+    //     text-align: right;
+    //     bottom: 0;
+    //     right: 0;
+    // }
 
     .nav_collection {
         position: fixed;
@@ -248,25 +286,29 @@ header {
         left: 0px;
         transition: 0.5s;
     }
+
+    // .cart-and-avatar {
+    //     gap: 5px;
+
+    //     .avatar img {
+    //         height: 25px;
+    //         width: auto;
+    //     }
+
+    //     .cart {
+    //         .cart-icon img {
+    //             height: 25px;
+    //             width: auto;
+    //         }
+    //     }
+    // }
 }
 
-@media (max-width: 375px) {
-    nav {
-        .left {
-            gap: 20px;
-        }
+// @media (max-width: 1000px) {
+//     nav {
+//         .left {
+//             gap: 20px;
+//         }
 
-        .cart-and-avatar {
-            gap: 10px;
-            .avatar img {
-                height: 25px;
-                width: auto;
-            }
-
-            .cart img {
-                height: 25px;
-                width: auto;
-            }
-        }
-    }
-}
+//     }
+// }

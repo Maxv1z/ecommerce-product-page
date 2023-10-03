@@ -1,10 +1,10 @@
 .image-gallery-content {
     width: 400px;
     max-width: 400px;
-    margin: 0 auto; // To center the main image
+    margin: 0 auto;
 
     img {
-        border-radius: 15px;
+        border-radius: 10px;
     }
 }
 
@@ -13,33 +13,65 @@
     justify-content: center;
     align-items: center;
     height: auto;
+    margin: 30px 0 0 0;
+
+    .image-gallery-thumbnails-container {
+        display: flex;
+        justify-content: space-between; /* Change to space-around */
+        align-items: center;
+        width: 95%; /* Ensure the container takes up the full width */
+    }
 
     .image-gallery-thumbnail {
-        border: 5px solid transparent;
-        border-radius: 15px;
-        transition: border-color 0.3s ease;
+        border: none;
+        width: fit-content;
+        height: auto;
 
-        img {
-            border-radius: 10px;
+        .image-gallery-thumbnail-image {
+            border: 3px solid transparent;
+
+            &:hover {
+                border: 3px solid #ff5722;
+            }
+
+            &:focus {
+                border: 3px solid #ff5722;
+                outline: none;
+            }
+
+            &:active {
+                border: 3px solid #ff5722;
+            }
+
+            &.active {
+                border: 3px solid #ff5722;
+                img {
+                    opacity: 0.3;
+                }
+            }
         }
-
         &:hover {
-            border: 3px solid #ff5722;
+            border: none;
         }
 
         &:focus {
-            border: 3px solid #ff5722;
-            outline: none;
+            border: none;
         }
 
         &:active {
-            border: 3px solid #ff5722;
+            border: none;
         }
 
         &.active {
-            border: 3px solid #ff5722;
+            border: none;
+        }
+
+        .image-gallery-thumbnail-inner {
+            width: 80px;
+            height: auto;
             img {
-                opacity: 0.3;
+                width: 100%;
+                height: auto;
             }
         }
     }
@@ -62,3 +94,13 @@
 .fullscreen-gallery .image-gallery-content {
     max-width: 80%; /* Adjust the width as needed */
 }
+
+// .image-gallery-left-nav,
+// .image-gallery-right-nav {
+// }
+
+// .image-gallery-left-nav polyline,
+// .image-gallery-right-nav polyline {
+//     stroke-width: 0.5;
+//     stroke: white;
+// }

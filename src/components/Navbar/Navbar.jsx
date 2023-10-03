@@ -26,7 +26,7 @@ const Navbar = ({sneakerAmountFinal, removeFromCart}) => {
                             alt="menu"
                         />
                     </div>
-                    <div className="logo" onClick={() => console.log(sneakerAmountFinal)}>
+                    <div className="logo">
                         <img src="./images/logo.svg" alt="" />
                     </div>
 
