@@ -134,12 +134,11 @@ header {
         text-align: center;
         width: 85vw;
         height: 200px;
-        top: 25%;
+        top: 13%;
         left: 0;
         right: 0;
         margin-left: auto;
         margin-right: auto;
-        // transform: translateY(-50%);
     }
 
     .cart-header {
@@ -178,6 +177,9 @@ header {
         align-items: center;
         color: gray;
 
+        width: 100%;
+        justify-content: space-between;
+
         margin: 20px 0 0 0;
 
         .right-side {
@@ -185,6 +187,7 @@ header {
             display: flex;
             flex-direction: column;
             gap: 5px;
+            text-align: left;
         }
 
         b {
